@@ -8,7 +8,7 @@ def on_connect(client, userdata, flags, rc):
     client.message_callback_add("chcampos/pong", on_message_from_ping)
 
 def on_message_from_ping(client, userdata, message):
-   print("Custom callback  - pong: "+message.payload.decode())
+   print("Message received  - pong: "+message.payload.decode())
    num = int(message.payload.decode())
    new_num = num + 1
    time.sleep(1)
