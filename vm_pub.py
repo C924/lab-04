@@ -55,6 +55,6 @@ if __name__ == '__main__':
         #publish date and time in their own topics
         """your code here"""
         client.publish("chcampos/current_time", current_time)
+        print("Publishing date", current_date)
         client.publish("chcampos/current_date", current_date)
-        # print("Date: ", current_date)
-        # print("Current Time: ", current_time)
+        print("Publishing time", current_time)
