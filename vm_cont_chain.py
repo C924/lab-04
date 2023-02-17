@@ -10,14 +10,14 @@ def on_connect(client, userdata, flags, rc):
 def on_message_from_ping(client, userdata, message):
    print("Custom callback  - pong: "+message.payload.decode())
    num = int(message.payload.decode())
-   num = num +1
+   new_num = num + 1
    time.sleep(1)
-   client.publish("chcampos/ping", num)
+   client.publish("chcampos/ping", new_num)
 
 def on_message(client, userdata, msg):
     print("Default callback - topic: " + msg.topic + "   msg: " + str(msg.payload, "utf-8"))
 
-#if __name__ == '__main__':
+# if __name__ == '__main__':
 #create a client object
 client = mqtt.Client()
 client.on_connect = on_connect
