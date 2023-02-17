@@ -23,7 +23,7 @@ if __name__ == '__main__':
     client = mqtt.Client()
     client.on_connect = on_connect
     client.on_message = on_message
-    client.connect("172.20.10.9", port = 11000, keepalive=60)
+    client.connect("172.20.10.9 2600:381:4603:56af:aceb:fb3c:4493:4301", port = 11000, keepalive=60)
     client.loop_forever()
 
 
