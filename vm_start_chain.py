@@ -4,10 +4,10 @@ import time
 
 def on_connect(client, userdata, flags, rc):
     print("Connected to server (i.e., broker) with result code "+str(rc))
-    client.subscribe("chcampos/ping")
-    client.message_callback_add("chcampos/ping", on_message_from_ping)
+    client.subscribe("chcampos/pong")
+    client.message_callback_add("chcampos/ping", on_message_from_pong)
 
-def on_message_from_ping(client, userdata, message):
+def on_message_from_pong(client, userdata, message):
    print("Custom callback  - ping: "+message.payload.decode())
    num = int(message.payload.decode())
    num = num +1
