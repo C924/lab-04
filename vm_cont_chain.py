@@ -13,18 +13,17 @@ def on_message_from_ping(client, userdata, message):
    new_num = num + 1
    time.sleep(1)
    client.publish("chcampos/ping", new_num)
+   print("Message sent", new_num)
 
 def on_message(client, userdata, msg):
     print("Default callback - topic: " + msg.topic + "   msg: " + str(msg.payload, "utf-8"))
 
-# if __name__ == '__main__':
-#create a client object
-client = mqtt.Client()
-client.on_connect = on_connect
-client.on_message = on_message
-client.connect("172.20.10.9")
-client.loop_start()
+if __name__ == '__main__':
+    #create a client object
+    client = mqtt.Client()
+    client.on_connect = on_connect
+    client.on_message = on_message
+    client.connect("172.20.10.9")
+    client.loop_forever()
 
-while True:
-     pass
 
