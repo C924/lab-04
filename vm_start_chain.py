@@ -11,7 +11,6 @@ def on_message_from_pong(client, userdata, message):
    print("Message received  - ping: "+message.payload.decode())
    num = int(message.payload.decode())
    new_num = num + 1
-   time.sleep(1)
    client.publish("chcampos/pong", new_num)
    print("Message sent", new_num)
 
@@ -27,7 +26,7 @@ if __name__ == '__main__':
     client.loop_start()
 
     num = 0
-
+    time.sleep(1)
     client.publish("chcampos/pong", num)
     print("Message sent",  num)
 
