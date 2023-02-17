@@ -9,7 +9,6 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message_from_ping(client, userdata, message):
    print("Custom callback  - ping: "+message.payload.decode())
-   num = input("Enter an integer")
    num = int(message.payload.decode())
    num = num +1
    client.publish("chcampos/pong", num)
@@ -23,7 +22,7 @@ if __name__ == '__main__':
 
     client.loop_start()
     time.sleep(1)
-
+    num = 0
     while True:
         #replace user with your USC username in all subscriptions
         pass
