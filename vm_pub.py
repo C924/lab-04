@@ -47,7 +47,7 @@ if __name__ == '__main__':
 
         #get date and time 
         """your code here"""
-        now = datetime.datetime.now()
+        now = datetime.now()
 
         current_date = now.strftime("%Y-%m-%d")
         current_time = now.strftime("%H:%M:%S")
