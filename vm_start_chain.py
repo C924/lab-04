@@ -24,7 +24,8 @@ client.on_connect = on_connect
 client.on_message = on_message
 client.connect("172.20.10.9")
 client.loop_start()
-client.publish("chcampos/pong", 0)
+num = 0
+client.publish("chcampos/pong", str(num))
 
 while True:
     pass
