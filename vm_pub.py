@@ -56,5 +56,5 @@ if __name__ == '__main__':
         """your code here"""
         client.publish("chcampos/current_time", current_time)
         client.publish("chcampos/current_date", current_date)
-        print("Date: ", current_date)
+        # print("Date: ", current_date)
         # print("Current Time: ", current_time)

@@ -21,7 +21,7 @@ def on_connect(client, userdata, flags, rc):
     #Add the custom callbacks by indicating the topic and the name of the callback handle
     client.message_callback_add("chcampos/ipinfo", on_message_from_ipinfo)
     client.message_callback_add("chcampos/current_date", on_message_from_current_date)
-    client.message_callback_add("chcampos/current_time", on_message_from_current_date)
+    client.message_callback_add("chcampos/current_time", on_message_from_current_time)
 
 
 """This object (functions are objects!) serves as the default callback for 
