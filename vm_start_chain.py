@@ -12,21 +12,21 @@ def on_message_from_pong(client, userdata, message):
    num = int(message.payload.decode())
    num = num +1
    client.publish("chcampos/pong", num)
+   time.sleep(1)
 
 def on_message(client, userdata, msg):
     print("Default callback - topic: " + msg.topic + "   msg: " + str(msg.payload, "utf-8"))
 
-if __name__ == '__main__':
-    #create a client object
-    client = mqtt.Client()
+# if __name__ == '__main__':
+#create a client object
+client = mqtt.Client()
+client.on_connect = on_connect
+client.on_message = on_message
+client.connect(host="172.20.10.9", keepalive=60)
+client.loop_start()
 
-    client.on_connect = on_connect
-    client.connect(host="172.20.10.9", keepalive=60)
+num = 0
 
-    client.loop_start()
-    time.sleep(1)
-    num = 0
-    while True:
-        #replace user with your USC username in all subscriptions
-        pass
+while True:
+    pass
 
