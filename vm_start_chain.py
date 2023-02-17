@@ -9,6 +9,7 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message_from_ping(client, userdata, message):
    print("Custom callback  - ping: "+message.payload.decode())
+   num = input("Enter an integer")
    num = int(message.payload.decode())
    num = num +1
    client.publish("chcampos/pong", num)
