@@ -12,7 +12,7 @@ def on_message_from_pong(client, userdata, message):
    num = int(message.payload.decode())
    new_num = num + 1
    time.sleep(1)
-   client.publish("chcampos/pong", new_num)
+   client.publish("chcampos/ping", new_num)
    print("Message sent", new_num)
 
 def on_message(client, userdata, msg):
