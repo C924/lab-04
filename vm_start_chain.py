@@ -5,7 +5,7 @@ import time
 def on_connect(client, userdata, flags, rc):
     print("Connected to server (i.e., broker) with result code "+str(rc))
     client.subscribe("chcampos/pong")
-    client.message_callback_add("chcampos/ping", on_message_from_pong)
+    client.message_callback_add("chcampos/pong", on_message_from_pong)
 
 def on_message_from_pong(client, userdata, message):
    print("Message received  - ping: "+message.payload.decode())
@@ -28,7 +28,7 @@ if __name__ == '__main__':
 
     num = 0
 
-    client.publish("chcampos/pong", num)
+    client.publish("chcampos/ping", num)
     print("Message sent",  num)
 
     while True:
