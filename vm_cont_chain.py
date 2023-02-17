@@ -11,8 +11,8 @@ def on_message_from_ping(client, userdata, message):
    print("Custom callback  - pong: "+message.payload.decode())
    num = int(message.payload.decode())
    num = num +1
-   client.publish("chcampos/ping", num)
    time.sleep(1)
+   client.publish("chcampos/ping", num)
 
 def on_message(client, userdata, msg):
     print("Default callback - topic: " + msg.topic + "   msg: " + str(msg.payload, "utf-8"))
