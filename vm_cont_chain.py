@@ -22,7 +22,7 @@ def on_message(client, userdata, msg):
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
-client.connect(host="172.20.10.9", keepalive=60)
+client.connect(host="172.20.10.9")
 client.loop_start()
 
 while True:
