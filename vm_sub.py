@@ -1,6 +1,9 @@
 """EE 250L Lab 04 Starter Code
 Run vm_pub.py in a separate terminal on your VM."""
 
+# Carl Campos
+# https://github.com/C924/lab-04
+
 import paho.mqtt.client as mqtt
 
 """This function (or "callback") will be executed when this client receives 
